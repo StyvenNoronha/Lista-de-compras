@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    
+    <title>Lista de Compras</title>
+  </head>
+  <body class="flex">
+    <header class="flex">
+      <img src="assets/logo.png" alt="Logo" />
+    </header>
+    <main>
+      <img src="assets/back.svg" alt="voltar" />
+      <h1>Compras da semana</h1>
+
+      <form class="input-wrapper flex">
+        <input type="text" name="item" id="item" class="flex-2" placeholder="Adicione um novo Item" />
+        <button class="flex-1" id="btn"  >Adicionar Item</button>
+      </form>
+
+      <ul>
+        
+        <li class="flex space-between">
+          <p>Pão de Forma</p>
+          <img id="iconeLixo"  src="assets/lixo.svg" alt="" />
+        </li>
+        
+      </ul>
+      
+      <div id="msg" class="excluir flex space-between sumiu">
+        <div class="flex">
+          <img class="icone" src="assets/warning-circle-filled.svg" alt="" />
+          <h5>O item foi removido da lista</h5>
+        </div>
+        <img  src="assets/delete-small.svg" alt="" />
+  
+      </div>
+    </main>
+    <script src="script.js" defer></script>
+  </body>
+</html>
