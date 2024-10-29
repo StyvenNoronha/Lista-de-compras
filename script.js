@@ -1,10 +1,9 @@
 const input = document.getElementById("item");
 const button = document.getElementById("btn");
 const msg = document.getElementById("msg");
-const lixo = document.getElementById("iconeLixo");
 
 button.addEventListener("click", (e) => {
-  e.preventDefault(); //nao deixa atualizar  o botao
+  e.preventDefault(); // evita que o formulário atualize a página
   const pegarr = input.value;
   const icone = document.createElement("img");
   const lista = document.querySelector("ul");
@@ -12,14 +11,16 @@ button.addEventListener("click", (e) => {
   const listaNome = document.createElement("p");
 
   icone.src = "assets/lixo.svg";
-  icone.id = "iconeLixo";
-  novaLista.classList.add("flex", "space-between"); // Adiciona múltiplas classes ao mesmo tempo
+  icone.classList.add("iconeLixo"); // Adiciona uma classe para o ícone
+  novaLista.classList.add("flex", "space-between");
   listaNome.textContent = pegarr;
 
-  lixo.addEventListener("click", () => {
-    msg.classList.remove("sumiu");
+  // Adiciona o evento de clique no ícone de lixo para remover o item
+  icone.addEventListener("click", () => {
+    lista.removeChild(novaLista); // Remove o item da lista
+    msg.classList.remove("sumiu"); // Exibe a mensagem temporariamente
     setTimeout(() => {
-      msg.classList.add("sumiu");
+      msg.classList.add("sumiu"); // Oculta a mensagem após 2 segundos
     }, 2000);
   });
 
